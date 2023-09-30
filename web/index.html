@@ -55,5 +55,32 @@
       });
     });
   </script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+    import { getAuth } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+   import { initializeFirestore } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+   // import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDyKFvFMXPfITLCdsMDNXjv_IRea_ArMG4",
+  authDomain: "epigo-8f971.firebaseapp.com",
+  projectId: "epigo-8f971",
+  storageBucket: "epigo-8f971.appspot.com",
+  messagingSenderId: "109178811801",
+  appId: "1:109178811801:web:d31703503fff6550128f08",
+  measurementId: "G-QX5P19ZZPN"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+   const firestore = initializeFirestore(app);
+   // const analytics = getAnalytics(app);
+  </script>
 </body>
 </html>
