@@ -1,3 +1,7 @@
+import 'package:epigo_adminpanel/Screens/Banners/banner.dart';
+import 'package:epigo_adminpanel/Screens/Categories/CategoryScreen.dart';
+import 'package:epigo_adminpanel/Screens/Produits/productscreen.dart';
+import 'package:epigo_adminpanel/Screens/Users/userscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -10,12 +14,13 @@ void main() async {
 
 WidgetsFlutterBinding.ensureInitialized();
 await Firebase.initializeApp(
-  options: FirebaseOptions(
+  options: const FirebaseOptions(
   apiKey: "AIzaSyDyKFvFMXPfITLCdsMDNXjv_IRea_ArMG4",
  
 appId: "1:109178811801:web:d31703503fff6550128f08",
   projectId: "epigo-8f971",
   messagingSenderId: "109178811801",
+    storageBucket: "epigo-8f971.appspot.com",
   )
 
 );
@@ -25,9 +30,7 @@ FirebaseFirestore.instance.settings =
 runApp(MyApp());
 }
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
+   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     //close dialog
@@ -35,21 +38,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       
  
-      theme: ThemeData(
-        primaryColor: Color(0xFFFF7043),
-        backgroundColor: Color(0xFFFF7043),
-        textTheme: TextTheme(
-          headline6: TextStyle(
-            color: Color(0xFFFF7043),
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
+     
       home:  LoginScreen(),
           routes: {
-        HomeScreen.id:(context)=> const  HomeScreen(),
-      
+        HomeScreen.id:(context)=> HomeScreen(),
+        CategoryScreen.id :(context)=>  CategoryScreen(),
+        BannerScreen.id :(context)=>  BannerScreen(), 
+        ProductScreen.id :(context)=>  ProductScreen(), 
+        UserScreen.id :(context)=>  UserScreen(), 
       
       
 

@@ -37,6 +37,20 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_auth: ^4.10.0
   dim_loading_dialog: ^0.0.1
+  flutter_admin_scaffold: ^1.2.0
+  flutter_lints: ^2.0.0
+  firebase_core: ^2.8.0
+  cloud_firestore: ^4.4.5
+  firebase_storage: ^11.0.16
+  firebase: ^9.0.3
+  file_picker: ^6.0.0
+  image_picker: ^1.0.4
+  intl: ^0.18.1
+  get: ^4.6.5
+  adaptive_scrollbar: ^2.1.2
+  responsive_table: ^0.2.0+2
+
+ 
 
 dev_dependencies:
   flutter_test:
@@ -47,10 +61,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
-  firebase_core: ^2.8.0
-  cloud_firestore: ^4.4.5
-  firebase_storage: ^11.0.16
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

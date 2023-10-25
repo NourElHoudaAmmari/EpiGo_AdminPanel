@@ -1,14 +1,14 @@
+import 'package:epigo_adminpanel/services/firebase.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '/constants.dart';
 import 'package:dim_loading_dialog/dim_loading_dialog.dart';
-import '/services/firebase_services.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import 'HomeScreen.dart';
 class LoginScreen extends StatefulWidget {
   static const String id = 'login-screen';
-  LoginScreen({super.key});
+
 
  
 
