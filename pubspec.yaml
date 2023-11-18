@@ -50,6 +50,7 @@ dependencies:
   adaptive_scrollbar: ^2.1.2
   responsive_table: ^0.2.0+2
 
+
  
 
 dev_dependencies:

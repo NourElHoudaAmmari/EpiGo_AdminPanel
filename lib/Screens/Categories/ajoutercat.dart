@@ -1,6 +1,7 @@
 import 'dart:html';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:epigo_adminpanel/Modeles/Category.dart';
 import 'package:epigo_adminpanel/Screens/Categories/CategoryScreen.dart';
 import 'package:epigo_adminpanel/Screens/sidebar.dart';
 import 'package:epigo_adminpanel/constants.dart';
@@ -70,12 +71,11 @@ Future<void> uploadToFirebase() async {
 
 Future<void> addDataToFirestore(String imageUrl, String libelle) async {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
-  await firestore.collection('categories').add({
-    'image': imageUrl,
-    'libelle': libelle,
-  });
- 
+  Category category = Category(imageUrl: imageUrl, libelle: libelle);
+
+  await firestore.collection('categories').add(category.toJson());
 }
+
 
   @override
   Widget build(BuildContext context) {

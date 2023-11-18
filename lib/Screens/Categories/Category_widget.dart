@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:epigo_adminpanel/services/firebase.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 
 
 class CategorieWidget extends StatefulWidget {
