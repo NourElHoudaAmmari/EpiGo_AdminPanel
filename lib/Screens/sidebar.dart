@@ -1,5 +1,6 @@
 import 'package:epigo_adminpanel/Screens/Banners/banner.dart';
 import 'package:epigo_adminpanel/Screens/Categories/CategoryScreen.dart';
+import 'package:epigo_adminpanel/Screens/DeliveryMethods/delivery_screen.dart';
 import 'package:epigo_adminpanel/Screens/Fournisseurs/fournisseur_Screen.dart';
 import 'package:epigo_adminpanel/Screens/HomeScreen.dart';
 import 'package:epigo_adminpanel/Screens/Produits/productscreen.dart';
@@ -34,6 +35,11 @@ import 'package:flutter_admin_scaffold/admin_scaffold.dart';
             title: 'Bannières',
             route: BannerScreen.id,
             icon: Icons.image,
+          ),
+              AdminMenuItem(
+            title: 'Methodes de livraisons',
+            route:   DeliveryMethods.id,
+            icon: Icons.delivery_dining_outlined,
           ),
            AdminMenuItem(
             title: 'Categorie',

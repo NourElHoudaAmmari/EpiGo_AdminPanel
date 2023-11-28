@@ -2,6 +2,7 @@
 
 import 'package:epigo_adminpanel/Screens/Banners/banner.dart';
 import 'package:epigo_adminpanel/Screens/Categories/CategoryScreen.dart';
+import 'package:epigo_adminpanel/Screens/DeliveryMethods/delivery_screen.dart';
 import 'package:epigo_adminpanel/Screens/Fournisseurs/fournisseur_Screen.dart';
 import 'package:epigo_adminpanel/Screens/Produits/productscreen.dart';
 import 'package:epigo_adminpanel/Screens/Users/userscreen.dart';
@@ -50,6 +51,7 @@ class MyApp extends StatelessWidget {
         ProductScreen.id :(context)=>  ProductScreen(), 
         UserScreen.id :(context)=>  UserScreen(), 
        Fournisseur_Screen.id:(context)=>Fournisseur_Screen(),
+     DeliveryMethods.id:(context)=>DeliveryMethods(),
 
       },
      
