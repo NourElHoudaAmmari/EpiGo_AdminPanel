@@ -7,6 +7,7 @@ class FournisseurViewModel {
 
    final FirebaseServices _services = FirebaseServices();
 
+   
   Stream<QuerySnapshot> get fournisseursStream =>
       _services.fournisseurs.orderBy('name', descending: true).snapshots();
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
