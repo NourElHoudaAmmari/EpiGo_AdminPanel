@@ -10,6 +10,7 @@ import 'package:flutter_admin_scaffold/admin_scaffold.dart';
 class Fournisseur_Screen extends StatefulWidget {
     static const String id = 'fournisseur-screen';
   const Fournisseur_Screen({super.key});
+    
 
   @override
   State<Fournisseur_Screen> createState() => _Fournisseur_ScreenState();
