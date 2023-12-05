@@ -11,6 +11,7 @@ import 'package:flutter_admin_scaffold/admin_scaffold.dart';
 class AddFournisseurScreen extends StatefulWidget {
   const AddFournisseurScreen({Key? key}) : super(key: key);
 
+  
   @override
   _AddFournisseurScreenState createState() => _AddFournisseurScreenState();
 }
