@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 
 
 class SearchController extends GetxController {
+  
   RxString _searchText = ''.obs;
   var products = <Product>[].obs;
   List<Product> get productList => products;
