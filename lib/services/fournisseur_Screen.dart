@@ -1,5 +1,7 @@
 // ignore_for_file: camel_case_types, file_names, sort_child_properties_last, prefer_const_constructors
 
+import 'package:epigo_adminpanel/Screens/Fournisseurs/Add_fournisseur.dart';
+import 'package:epigo_adminpanel/Screens/Fournisseurs/FournisseurViewModel.dart';
 import 'package:epigo_adminpanel/Screens/sidebar.dart';
 import 'package:epigo_adminpanel/constants.dart';
 import 'package:epigo_adminpanel/widgets/fournisseur_datatable_widget.dart';
@@ -15,6 +17,7 @@ class Fournisseur_Screen extends StatefulWidget {
 }
 
 class _Fournisseur_ScreenState extends State<Fournisseur_Screen> {
+   final FournisseurViewModel viewModel = FournisseurViewModel();
   @override
   Widget build(BuildContext context) {
         SideBarwidget _sideBar = SideBarwidget();
@@ -47,7 +50,13 @@ class _Fournisseur_ScreenState extends State<Fournisseur_Screen> {
           Align(
             alignment: Alignment.centerRight,
             child: ElevatedButton(onPressed: () {
-                               
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                        AddFournisseurScreen(),
+                                    ),
+                                  );
                                 }, 
             child: Text('Ajouter Fournisseur',style: TextStyle(color: Colors.black),),
              style: ElevatedButton.styleFrom(primary:primaryColor),
@@ -56,10 +65,8 @@ class _Fournisseur_ScreenState extends State<Fournisseur_Screen> {
           ), 
                            
          const Divider(thickness: 5,),
-         FournisseurDataTable(),
-          Divider(thickness: 5,),
-
-           
+         FournisseurDataTable(viewModel: viewModel),
+          Divider(thickness: 5,), 
         ],
               )
             )

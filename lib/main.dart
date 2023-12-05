@@ -2,18 +2,19 @@
 
 import 'package:epigo_adminpanel/Screens/Banners/banner.dart';
 import 'package:epigo_adminpanel/Screens/Categories/CategoryScreen.dart';
-import 'package:epigo_adminpanel/Screens/Fournisseurs/fournisseur_Screen.dart';
+import 'package:epigo_adminpanel/Screens/order/OrdersScreen.dart';
+import 'package:epigo_adminpanel/services/fournisseur_Screen.dart';
 import 'package:epigo_adminpanel/Screens/Produits/productscreen.dart';
 import 'package:epigo_adminpanel/Screens/Users/userscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'Screens/HomeScreen.dart';
 import 'Screens/LoginScreen.dart';
 
 void main() async {
+  
 
 WidgetsFlutterBinding.ensureInitialized();
 await Firebase.initializeApp(
@@ -50,6 +51,7 @@ class MyApp extends StatelessWidget {
         ProductScreen.id :(context)=>  ProductScreen(), 
         UserScreen.id :(context)=>  UserScreen(), 
        Fournisseur_Screen.id:(context)=>Fournisseur_Screen(),
+       OrdersScreen.id:(context)=> OrdersScreen(),
 
       },
      

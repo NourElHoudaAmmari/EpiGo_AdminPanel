@@ -2,6 +2,7 @@
 
 import 'dart:html' as html;
 import 'dart:html';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:epigo_adminpanel/Modeles/product.dart';
 import 'package:epigo_adminpanel/Screens/Produits/productscreen.dart';
@@ -12,6 +13,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_admin_scaffold/admin_scaffold.dart';
 
 class AddProduct extends StatefulWidget {
+  String get selectedCategorie => selectedCategorie;
+  String get selectedFournisseur => selectedFournisseur;
+  bool get  _isFournisseurSelected => _isFournisseurSelected;
+  
+
+
   
   @override
   State<AddProduct> createState() => _AddProductState();
@@ -19,9 +26,10 @@ class AddProduct extends StatefulWidget {
 
 class _AddProductState extends State<AddProduct> {
     bool _isButtonVisible = true;
+    
    final _formkey = GlobalKey<FormState>();
    late final TextEditingController _titleController , _priceController,_descriptionController,_unitController, _disController,
-   _prixachatController,_qteStockController,_fourController;
+   _prixachatController,_qteStockController,_fourController,_qteminController;
      String selectedCategorie="0";
      String selectedFournisseur="0";
      bool _isFournisseurSelected=false;
@@ -43,6 +51,7 @@ _prixachatController = TextEditingController();
 _qteStockController = TextEditingController();
     _unitController = TextEditingController();
     _disController = TextEditingController();
+    _qteminController = TextEditingController();
     super.initState();
    } 
 
@@ -78,6 +87,7 @@ Future<void> selectImage() async {
       double price = double.tryParse(_priceController.text) ?? 0.0;
       double? prixachat = double.tryParse(_prixachatController.text) ?? 0.0;
       int? stockQuantity= int.parse(_qteStockController.text);
+       int? quantitymin= int.parse(_qteminController.text);
       int? qunt = 1;
      int? dis = int.tryParse(_disController.text);
 
@@ -95,6 +105,7 @@ Future<void> selectImage() async {
         prixachat ,
         stockQuantity!,
       selectedFournisseur,
+      quantitymin
 
       );
       setState(() {
@@ -112,9 +123,9 @@ Future<void> selectImage() async {
     double sellingPrice = purchasePrice * 1.3;
 
     // Update the selling price controller
-    _priceController.text = sellingPrice.toStringAsFixed(2);
+    _priceController.text = sellingPrice.toStringAsFixed(3);
   }
-Future<void> addDataToFirestore(String imageUrl, String titre, String category, String description, double price, String units, int qunt, int dis, double prixachat,int stockQuantity,String fournisseur) async {
+Future<void> addDataToFirestore(String imageUrl, String titre, String category, String description, double price, String units, int qunt, int dis, double prixachat,int stockQuantity,String fournisseur, int quantitymin) async {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
   String id = FirebaseFirestore.instance.collection('products').doc().id;
 
@@ -132,6 +143,7 @@ Future<void> addDataToFirestore(String imageUrl, String titre, String category, 
     prixachat: prixachat,
     fournisseur: fournisseur,
     stockQuantity:stockQuantity,
+    quantitymin:quantitymin,
   );
 
   await firestore.collection('products').doc(id).set(product.toMap());
@@ -412,32 +424,52 @@ Widget build(BuildContext context) {
                         'Le prix d\'achat est obligatoire',
                         style: TextStyle(color: Colors.red),
                       ),
+                      const SizedBox(height: 20),
+Row(
+  crossAxisAlignment: CrossAxisAlignment.center,
+  children: [
+    Expanded(
+      child: TextFormField(
+        keyboardType: TextInputType.number,
+        controller: _qteStockController,
+        style: const TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+        ),
+        decoration: const InputDecoration(
+          border: OutlineInputBorder(),
+          labelText: 'Quantité en Stock',
+        ),
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'quantite en stock est obligatoire';
+          }
+          return null;
+        },
+      ),
+    ),
+    const SizedBox(width: 20),
+    Expanded(
+      child: TextFormField(
+        keyboardType: TextInputType.number,
+        controller: _qteminController,
+        style: const TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+        ),
+        decoration: const InputDecoration(
+          border: OutlineInputBorder(),
+          labelText: 'Quantité minimale',
+        ),
+        validator: (value) {
+          // Validation logic for the new field...
+        },
+      ),
+    ),
+  ],
+),
 
-                  const SizedBox(height: 20),
-                    TextFormField(
-                       keyboardType: TextInputType.number,
-                    controller: _qteStockController,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    decoration: const InputDecoration(
-                         border: OutlineInputBorder(),
-                      labelText: 'Quantité en Stock',
-                    ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'quantite en stock est obligatoire';
-                      }
-                      return null;
-                    },
-                  ),
-                  if (_formKey.currentState?.validate() ?? false)
-                  const Text(
-            'quantite en stock est obligatoire',
-            style: TextStyle(color: Colors.red),
-                  ),
-                  
+                 
      const SizedBox(height: 20),
                   TextFormField(
                        keyboardType: TextInputType.number,
@@ -450,12 +482,7 @@ Widget build(BuildContext context) {
                          border: OutlineInputBorder(),
                       labelText: 'Remise (%)',
                     ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Remise est obligatoire';
-                      }
-                      return null;
-                    },
+                   
                   ),
                   if (_formKey.currentState?.validate() ?? false)
                   const Text(

@@ -1,7 +1,4 @@
-// ignore_for_file: sort_child_properties_last
-
 import 'dart:html';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:epigo_adminpanel/Modeles/Category.dart';
 import 'package:epigo_adminpanel/Screens/Categories/CategoryScreen.dart';
@@ -11,7 +8,6 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_admin_scaffold/admin_scaffold.dart';
 import 'dart:html' as html;
-import 'dart:io' as io;
 
 
 

@@ -49,13 +49,19 @@ dependencies:
   adaptive_scrollbar: ^2.1.2
   responsive_table: ^0.2.0+2
   file_picker: ^5.3.1
+  http: ^0.13.6
+  gap: ^3.0.1
+  getwidget: ^4.0.0
+
 
 
  
 
 dev_dependencies:
+  build_runner: ^2.4.7
   flutter_test:
     sdk: flutter
+  mockito: ^5.4.3
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

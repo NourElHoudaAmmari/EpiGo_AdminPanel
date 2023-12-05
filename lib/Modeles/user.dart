@@ -23,16 +23,7 @@ final bool isBlocked ;
    this.isBlocked=false,
   });
 
-  /*User.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    name = json['name'];
-    email = json['email'];
-    phone = json['phone'];
-      address = json['address'];
-       isBlocked = json['isBlocked'];
 
-    
-  }*/
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
@@ -46,19 +37,7 @@ final bool isBlocked ;
     return data;
   }
 
-  /*factory User.fromSnapshot(DocumentSnapshot snapshot) {
-  final data = snapshot.data();
-final name = data!['name'] as String?;
-final id = data!['id'] as int?;
-final email = data!['email'] as String?;
-final phone = data!['phone'] as String?;
-  return User(
-    name: name,
-    id: id,
-    email: email,
-    phone: phone,
-  );
-}*/
+  
 factory User.fromSnapshot(DocumentSnapshot snapshot) {
   final data = snapshot.data() as Map<String, dynamic>?;
   final name = data?['name'] as String?;

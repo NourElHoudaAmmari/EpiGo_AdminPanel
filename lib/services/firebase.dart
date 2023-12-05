@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:epigo_adminpanel/Modeles/product.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 
 class FirebaseServices{
     final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -12,7 +11,7 @@ class FirebaseServices{
   CollectionReference banners = FirebaseFirestore.instance.collection('banners');
   CollectionReference produits = FirebaseFirestore.instance.collection('products');
     CollectionReference fournisseurs = FirebaseFirestore.instance.collection('fournisseurs');
-  
+  CollectionReference orders = FirebaseFirestore.instance.collection('orders');
   Future<QuerySnapshot> getAdminCredentials(){
 var result = FirebaseFirestore.instance.collection('Admin').get();
 return result;
@@ -39,4 +38,5 @@ Stream<List<Product>> searchProduct(String searchText) {
       'accVerified':status?false:true
     });
   }
+  
 }

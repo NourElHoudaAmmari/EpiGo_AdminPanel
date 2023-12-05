@@ -1,5 +1,5 @@
 import 'package:adaptive_scrollbar/adaptive_scrollbar.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:epigo_adminpanel/Controllers/user_controller.dart';
 import 'package:epigo_adminpanel/constants.dart';
 import 'package:epigo_adminpanel/services/custom_text.dart';
@@ -19,7 +19,6 @@ class ClientsTable extends StatefulWidget {
 class _ClientsTableState extends State<ClientsTable> {
   late User user;
   bool _isBlocked = false;
-  // bool isBlocked = false;
   final UserController customersController =
       Get.put(UserController());
 
@@ -67,7 +66,7 @@ print(statusText); // Affiche "Débloqué"
         borderRadius: BorderRadius.circular(8),
       ),
       padding: const EdgeInsets.all(16),
-      margin: const EdgeInsets.only(bottom: 30),
+      margin: const EdgeInsets.only(bottom: 20),
       child: AdaptiveScrollbar(
         underColor: Colors.blueGrey.withOpacity(0.3),
         sliderDefaultColor: active.withOpacity(0.7),
@@ -103,13 +102,13 @@ print(statusText); // Affiche "Débloqué"
                   
                       return DataRow(cells: [
   DataCell(Padding(
-    padding: EdgeInsets.symmetric(horizontal: 30.0),
+    padding: EdgeInsets.symmetric(horizontal: 20.0),
     child: CustomText(
       text: customersController.users[index].name.toString(),
     ),
   )),
   DataCell(Padding(
-    padding: EdgeInsets.symmetric(horizontal: 30.0),
+    padding: EdgeInsets.symmetric(horizontal: 20.0),
     child: CustomText(
       text: customersController.users[index].email.toString(),
     ),
