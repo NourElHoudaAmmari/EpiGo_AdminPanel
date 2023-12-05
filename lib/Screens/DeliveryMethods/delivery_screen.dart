@@ -1,25 +1,22 @@
-// ignore_for_file: camel_case_types, file_names, sort_child_properties_last, prefer_const_constructors
 
-import 'package:epigo_adminpanel/Screens/Fournisseurs/FournisseurViewModel.dart';
 import 'package:epigo_adminpanel/Screens/sidebar.dart';
 import 'package:epigo_adminpanel/constants.dart';
-import 'package:epigo_adminpanel/widgets/fournisseur_datatable_widget.dart';
+import 'package:epigo_adminpanel/widgets/delivery_methods_datatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_admin_scaffold/admin_scaffold.dart';
 
-class Fournisseur_Screen extends StatefulWidget {
-    static const String id = 'fournisseur-screen';
-  const Fournisseur_Screen({super.key});
+class DeliveryMethods extends StatefulWidget {
+    static const String id = 'DeliveryMethods-screen';
+  const DeliveryMethods({super.key});
 
   @override
-  State<Fournisseur_Screen> createState() => _Fournisseur_ScreenState();
+  State<DeliveryMethods> createState() => _DeliveryMethodsState();
 }
 
-class _Fournisseur_ScreenState extends State<Fournisseur_Screen> {
+class _DeliveryMethodsState extends State<DeliveryMethods> {
   @override
   Widget build(BuildContext context) {
-    FournisseurViewModel myViewModel = FournisseurViewModel();
-        SideBarwidget _sideBar = SideBarwidget();
+   SideBarwidget _sideBar = SideBarwidget();
     return AdminScaffold(
           backgroundColor: Colors.white,
           appBar: AppBar(
@@ -29,7 +26,7 @@ class _Fournisseur_ScreenState extends State<Fournisseur_Screen> {
         ),
        
           
-            sideBar: _sideBar.sideBarMenus(context,Fournisseur_Screen.id),
+            sideBar: _sideBar.sideBarMenus(context,  DeliveryMethods.id),
           body: SingleChildScrollView(
             child: Container(
               alignment: Alignment.topLeft,
@@ -38,7 +35,7 @@ class _Fournisseur_ScreenState extends State<Fournisseur_Screen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    'Fournisseurs',
+                    'Méthodes de livraisons',
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.w700,
@@ -51,15 +48,14 @@ class _Fournisseur_ScreenState extends State<Fournisseur_Screen> {
             child: ElevatedButton(onPressed: () {
                                
                                 }, 
-            child: Text('Ajouter Fournisseur',style: TextStyle(color: Colors.black),),
+            child: Text('Ajouter',style: TextStyle(color: Colors.black),),
              style: ElevatedButton.styleFrom(primary:primaryColor),
             
             ),
           ), 
                            
          const Divider(thickness: 5,),
-        
-FournisseurDataTable(viewModel: myViewModel),
+      DeliveryMethodsDataTable(),
           Divider(thickness: 5,),
 
            

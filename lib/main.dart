@@ -2,6 +2,7 @@
 
 import 'package:epigo_adminpanel/Screens/Banners/banner.dart';
 import 'package:epigo_adminpanel/Screens/Categories/CategoryScreen.dart';
+import 'package:epigo_adminpanel/Screens/DeliveryMethods/delivery_screen.dart';
 import 'package:epigo_adminpanel/Screens/order/OrdersScreen.dart';
 import 'package:epigo_adminpanel/services/fournisseur_Screen.dart';
 import 'package:epigo_adminpanel/Screens/Produits/productscreen.dart';

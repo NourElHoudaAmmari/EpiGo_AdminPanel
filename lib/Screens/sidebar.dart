@@ -1,5 +1,6 @@
 import 'package:epigo_adminpanel/Screens/Banners/banner.dart';
 import 'package:epigo_adminpanel/Screens/Categories/CategoryScreen.dart';
+import 'package:epigo_adminpanel/Screens/DeliveryMethods/delivery_screen.dart';
 import 'package:epigo_adminpanel/Screens/HomeScreen.dart';
 import 'package:epigo_adminpanel/Screens/Produits/productscreen.dart';
 import 'package:epigo_adminpanel/Screens/Users/userscreen.dart';
@@ -35,6 +36,11 @@ import 'package:flutter_admin_scaffold/admin_scaffold.dart';
             route: BannerScreen.id,
             icon: Icons.image,
           ),
+              AdminMenuItem(
+            title: 'Methodes de livraisons',
+            route:   DeliveryMethods.id,
+            icon: Icons.delivery_dining_outlined,
+          ),
            AdminMenuItem(
             title: 'Categorie',
             route: CategoryScreen.id,
@@ -59,8 +65,8 @@ import 'package:flutter_admin_scaffold/admin_scaffold.dart';
         ),
    AdminMenuItem(
           title: 'Stock',
-          route: OrdersScreen.id, // Replace with the actual route for Orders
-          icon: Icons.check_box, // Replace with the desired icon for Orders
+          route: '', // Replace with the actual route for Orders
+          icon: Icons.check_box, 
         ),
         ], 
         

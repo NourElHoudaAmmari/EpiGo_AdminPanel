@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:epigo_adminpanel/Modeles/delivery_methods.dart';
 import 'package:epigo_adminpanel/Modeles/product.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
