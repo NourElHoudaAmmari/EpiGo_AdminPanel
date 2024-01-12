@@ -1,16 +1,32 @@
 # epigo_adminpanel
 
-A new Flutter project.
+## Application ScreenShots
 
-## Getting Started
+<div align="center">
+  <img src="https://github.com/NourElHoudaAmmari/EpiGo_AdminPanel/assets/113768152/79f60101-b78f-4b40-94e9-9d3040c3534e" width="250" />
+  <img src="https://github.com/NourElHoudaAmmari/EpiGo_AdminPanel/assets/113768152/dc565190-7afc-43cc-8a8f-3e88c526a31c" width="250" />
+</div>
 
-This project is a starting point for a Flutter application.
+<div align="center">
+  <img src="https://github.com/NourElHoudaAmmari/EpiGo_AdminPanel/assets/113768152/b667bc05-70c5-4935-9ca5-c682bc0bfa22" width="250" />
+  <img src="https://github.com/NourElHoudaAmmari/EpiGo_AdminPanel/assets/113768152/4bfa14c1-a513-4054-b63e-bc67e53946c5" width="250" />
+</div>
 
-A few resources to get you started if this is your first Flutter project:
+<div align="center">
+  <img src="https://github.com/NourElHoudaAmmari/EpiGo_AdminPanel/assets/113768152/13e4df5b-4d1f-41a6-9924-eb253658795d" width="250" />
+  <img src="https://github.com/NourElHoudaAmmari/EpiGo_AdminPanel/assets/113768152/5906d908-a13f-4918-9439-7cf17c2b6823" width="250" />
+</div>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<div align="center">
+  <img src="https://github.com/NourElHoudaAmmari/EpiGo_AdminPanel/assets/113768152/90aa483c-484a-4842-802f-dae6c94057b5" width="250" />
+  <img src="https://github.com/NourElHoudaAmmari/EpiGo_AdminPanel/assets/113768152/59254c57-8c67-45d0-b96f-79f051c60f66" width="250" />
+</div>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<div align="center">
+  <img src="https://github.com/NourElHoudaAmmari/EpiGo_AdminPanel/assets/113768152/d951beb9-2439-47cb-ba1d-ae0659acc80f" width="250" />
+  <img src="https://github.com/NourElHoudaAmmari/EpiGo_AdminPanel/assets/113768152/2d3a865a-823a-4386-bc55-4ccc222571dc" width="250" />
+</div>
+
+<div align="center">
+  <img src="https://github.com/NourElHoudaAmmari/EpiGo_AdminPanel/assets/113768152/92950640-73c1-444a-9c7a-266d0c1e0ed5" width="250" />
+</div>
